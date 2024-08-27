@@ -1,3 +1,550 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "682a",
+      "nombre": "Amira",
+      "cedula": "1122",
+      "contra": "1122",
+      "select": "estudiante"
+    },
+    {
+      "id": "8645",
+      "nombre": "Angie",
+      "cedula": "111111111111",
+      "contra": "000",
+      "select": "administrador"
+    },
+    {
+      "id": "df07",
+      "nombre": "Amira",
+      "cedula": "0909",
+      "contra": "1122",
+      "select": "administrador"
+    },
+    {
+      "id": "2ebb",
+      "nombre": "Amira",
+      "cedula": "12345",
+      "contra": "0000",
+      "select": "administrador"
+    },
+    {
+      "id": "17ff",
+      "nombre": "Amira",
+      "cedula": "155852318803",
+      "contra": "000",
+      "select": "administrador"
+    },
+    {
+      "id": "c1ea",
+      "nombre": "Angie",
+      "cedula": "987654321",
+      "contra": "12345",
+      "select": "administrador"
+    },
+    {
+      "id": "3281",
+      "nombre": "Amira",
+      "cedula": "303510437",
+      "contra": "1234",
+      "select": "administrador"
+    },
+    {
+      "id": "33ca",
+      "nombre": "Amira",
+      "cedula": "0908",
+      "contra": "0908",
+      "select": "administrador"
+    },
+    {
+      "id": "eca1",
+      "nombre": "putito",
+      "cedula": "12345678",
+      "contra": "12345",
+      "select": "administrador"
+    }
+  ],
+  "permisos": [
+    {
+      "id": "90e6",
+      "nombreSolicitante": "Amira",
+      "selector": "Santa Ana",
+      "fechaSalida": "2024-08-03",
+      "fechaRegreso": "2024-08-10",
+      "codigoCompu": "9900"
+    },
+    {
+      "id": "426c",
+      "nombreSolicitante": "Amira",
+      "selector": "Puntarenas",
+      "fechaSalida": "2024-08-25",
+      "fechaRegreso": "2024-08-26",
+      "codigoCompu": "12345"
+    },
+    {
+      "id": "c632",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-02",
+      "fechaRegreso": "2024-08-09",
+      "codigoCompu": "6677"
+    },
+    {
+      "id": "93e5",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-02",
+      "fechaRegreso": "2024-08-09",
+      "codigoCompu": "6677"
+    },
+    {
+      "id": "4611",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-02",
+      "fechaRegreso": "2024-08-09",
+      "codigoCompu": "6677"
+    },
+    {
+      "id": "cf59",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-02",
+      "fechaRegreso": "2024-08-09",
+      "codigoCompu": "6677"
+    },
+    {
+      "id": "f253",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "ff99",
+      "nombreSolicitante": "Amira",
+      "selector": "Puntarenas",
+      "fechaSalida": "2024-08-30",
+      "fechaRegreso": "2024-08-30",
+      "codigoCompu": "303030"
+    },
+    {
+      "id": "e345",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "356d",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "8f18",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "d61d",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "0e41",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "f527",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "4e2d",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "5b93",
+      "nombreSolicitante": "Amira",
+      "selector": "Puntarenas",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "b3ce",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "9a22",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "7154",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "2024-08-29",
+      "codigoCompu": "12345"
+    },
+    {
+      "id": "5bb7",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "a6fb",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "1a7b",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "2024-08-28",
+      "codigoCompu": ""
+    },
+    {
+      "id": "706f",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "e6a5",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "2024-08-28",
+      "codigoCompu": ""
+    },
+    {
+      "id": "b556",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "3854",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "ab5a",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "83cc",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "c03d",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "7614",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-21",
+      "fechaRegreso": "2024-08-29",
+      "codigoCompu": ""
+    },
+    {
+      "id": "cb7a",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-29",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "a162",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-30",
+      "fechaRegreso": "2024-08-21",
+      "codigoCompu": ""
+    },
+    {
+      "id": "4bb6",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "4b4c",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "d648",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-08",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "f071",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-07-31",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "0ad0",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-20",
+      "fechaRegreso": "2024-08-30",
+      "codigoCompu": "12345"
+    },
+    {
+      "id": "40fa",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "8668",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-01",
+      "fechaRegreso": "2024-08-29",
+      "codigoCompu": ""
+    },
+    {
+      "id": "2e3a",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "8ac7",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-08",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "617c",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-08",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "8353",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-07",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "3508",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-14",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "7dcf",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-07",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "6ff2",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-06",
+      "fechaRegreso": "2024-08-23",
+      "codigoCompu": ""
+    },
+    {
+      "id": "4883",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-08",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "74c8",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "66bc",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-08",
+      "fechaRegreso": "2024-08-16",
+      "codigoCompu": ""
+    },
+    {
+      "id": "a8e5",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "2df4",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-15",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "516e",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "2024-08-08",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    },
+    {
+      "id": "2638",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": ""
+    }
+  ],
+  "historial": [
+    {
+      "id": "34e4",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": "",
+      "estado": "Rechazada"
+    },
+    {
+      "id": "ddd",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": "",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "34e4",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": "",
+      "estado": "Rechazada"
+    },
+    {
+      "id": "ddd",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": "",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "34e4",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": "",
+      "estado": "Rechazada"
+    },
+    {
+      "id": "ddd",
+      "nombreSolicitante": "Amira",
+      "selector": "Nosara",
+      "fechaSalida": "",
+      "fechaRegreso": "",
+      "codigoCompu": "",
+      "estado": "Aceptado"
+    }
+  ],
+  "aprobadas": []
 }
