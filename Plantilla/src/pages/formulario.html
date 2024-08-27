@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de solicitud</title>
+   <link rel="stylesheet" href="../css/formulario.css">
+</head>
+<body>
+
+<div class="formulario">
+        <br>
+                <h2>Formulario de solicitud de permisos</h2>
+                <h3>Nombre</h3>
+                <input disabled value="" id="nombreSolicitante" type="text" placeholder="Ingresa tu nombre">
+        <br>
+                <h3 class="id">Id usuario</h3>
+                <input disabled value="" type="text" id="idU">
+
+        <br>
+                <h3>Sede</h3> 
+                <select name="selector" id="selector">
+                        <option value="Nosara">Nosara</option>
+                        <option value="Santa Ana">Santa Ana</option>
+                        <option value="Puntarenas">Puntarenas</option>
+                </select>
+        <br>
+                <h3>Fecha de salida</h3>
+                <input type="date" name="" id="fechaSalida">
+
+                <h3>Fecha de regreso</h3>
+                <input type="date" name="" id="fechaRegreso">
+        <br>
+                <h3>Codigo de la computadora</h3>
+                <input id="codigoCompu" type="text" placeholder="Ingresa el codigo" >
+        <br>
+        <br>
+                <input type="checkbox" name="" id="checkbox">  
+                <a href="http:/agree.html">Acepto terminos y condiones</a>
+        <br>
+        <br>
+                <button class="botonEnviar" id="botonEnviar" type="submit">Enviar formulario  </button>
+        <br>
+        <br>
+</div>
+
+        <script type="module" src="../js/formulario.js"></script>
+</body> 
+</html>

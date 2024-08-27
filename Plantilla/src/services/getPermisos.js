@@ -1,7 +1,7 @@
 
-async function obtenerUsuarios() {
+async function obtenerPermisos() {
     try {
-       const response = await fetch ('http://localhost:3006/users')
+       const response = await fetch ('http://localhost:3006/permisos')
                     // Realiza una solicitud GET a la URL especificada
        
        const data = await response.json();
@@ -17,4 +17,4 @@ async function obtenerUsuarios() {
 }
 
 
-export {obtenerUsuarios}
+export {obtenerPermisos}
