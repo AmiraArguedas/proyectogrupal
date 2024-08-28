@@ -1,20 +1,21 @@
-import {obtenerPermisos} from "../services/getPermisos"
-import {postHistorial} from "../services/postHistorial"
-import {postearAprobados} from "../services/postAprobadas";
-import {deletePermisos} from "../services/deletePermisos"
 
+import {obtenerPermisos} from "../services/getPermisos" // obtiene los permisos / solicitudes del server
+import {postHistorial} from "../services/postHistorial" // postea las solicitudes a un historial (a otro endpoint) 
+import {postearAprobados} from "../services/postAprobadas"; // postea las solicitudes aceptadas (a otro endpoint)
+import {deletePermisos} from "../services/deletePermisos" // elimina los permisos cuando ya son "filtrados"
 
-let divHTML = document.getElementById("divHTML") //div para ingresar datos del formulario (appendChild)
+let divHTML = document.getElementById("divHTML") //div para ingresar datos del formulario ("divPapa")
 
 obtenerInfoPermisos() // llamado a la function
 async function obtenerInfoPermisos() { // se crea funcion para quitar promesa
     let permisos = await obtenerPermisos() // obtiene los datos que trae la funcion
             console.log("Datos obtenidos de los permisos:", permisos); // muestra los datos que llegaron al server de los permisos 
 
-    for (let index = 0; index < permisos.length; index++) { // para que recorra los datos que estan en el server
+
+    for (let index = 0; index < permisos.length; index++) { // recorre los datos que estan en el server
         
-        let borrarId = permisos[index].id
-        console.log(borrarId);
+        let borrarId = permisos[index].id // accede a los ids (los obtiene y guarda en una variable)
+        console.log(borrarId); // muestra en consola los id que estan en permisos / solcitudes pendientes
 
         // se crean etiquetas - create element 
         const divHijo = document.createElement("div")
@@ -27,7 +28,17 @@ async function obtenerInfoPermisos() { // se crea funcion para quitar promesa
         const botonAceptar = document.createElement("button")
         const botonRechazar = document.createElement("button")
 
-        // se crean variables para que contengan la informacion "especifica" que trae / obtiene el get
+
+      //se crean clases para dar estilo en css
+      divHijo.className = "divHijo"
+
+      //se crean clases a los botones de aceptar y rechazar
+      botonAceptar.className = "botonAceptar"
+      botonRechazar.className = "botonRechazar"
+
+     // se crean variables para que contengan la informacion "especifica" que trae / obtiene el get
+
+ 
         let contenidoNombre = permisos[index].nombreSolicitante
         let contenidoSelectro = permisos[index].selector 
         let contenidoSalida = permisos[index].fechaSalida 
@@ -60,31 +71,53 @@ async function obtenerInfoPermisos() { // se crea funcion para quitar promesa
         divHTML.appendChild(divHijo) // inserta todos las etiquetas que tiene el divHijo al divPapa - que fue creado en HTML y estaba vacio 
 
         // boton para aceptar solicitud 
-        botonAceptar.addEventListener("click", function () {
-            divHTML.removeChild(divHijo);
-            Swal.fire("Solicitud Aceptada");
 
-            let estado = "Aceptado"
+        botonAceptar.addEventListener("click", function () { //evento del boton
+            divHTML.removeChild(divHijo); // se eliminan el dato que se muestra en pantalla
+            Swal.fire("Solicitud Aceptada"); // sweet alert "solicitud aceptada"
+
+            let estado = "Aceptado" // cambia el estado de la solicitud a aceptada
+
+            // postea las solicitudes a historial (a otro endpoint)
             postHistorial(contenidoNombre, contenidoSelectro, contenidoSalida, contenidoRegreso, contenidoCodigo, estado)
 
+            // postea las solicitudes aceptadas (a otro endpoint)
             postearAprobados(contenidoNombre, contenidoSelectro, contenidoSalida, contenidoRegreso, contenidoCodigo, estado)
             console.log(estado);
+
+            // borra definitivamente la solicitud pendiente del server
 
             deletePermisos(borrarId)
 
         }) // cierre del evento del boton aceptar
 
-        // boton para rechazar solicitud 
-        botonRechazar.addEventListener("click", function () {
-            divHTML.removeChild(divHijo);
-            Swal.fire("Solicitud Rechazada");
 
-            let estado = "Rechazada"
+        
+        // boton para rechazar solicitud 
+        botonRechazar.addEventListener("click", function () { //evento del boton
+            divHTML.removeChild(divHijo); // se eliminan el dato que se muestra en pantalla
+            Swal.fire("Solicitud Rechazada"); // sweet alert "solicitud rechazada"
+
+            let estado = "Rechazada" // cambia el estado de la solicitud a aceptada
+
+            // postea las solicitudes a historial (a otro endpoint)
             postHistorial(contenidoNombre, contenidoSelectro, contenidoSalida, contenidoRegreso, contenidoCodigo, estado)
             console.log(estado);
+
+            // borra definitivamente la solicitud pendiente del server
 
             deletePermisos(borrarId)
 
         }) // cierre del evento del boton rechazar
     } // cierre del for
+
 } // cierre de la async function
+
+let botonDevolver = document.getElementById("botonDevolver")
+
+     // boton para regresar a main
+            botonDevolver.addEventListener("click", function () { // evento del boton
+                    window.location.href = "../main.html"; 
+    }) // cierre del boton
+
+

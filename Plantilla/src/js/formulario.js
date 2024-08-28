@@ -1,4 +1,5 @@
-import {postPermisos} from "../services/postPermisos";
+
+import {postPermisos} from "../services/postPermisos"; // postea las solicitudes en el server (desde el form)
 
 let nombreSolicitante = document.getElementById("nombreSolicitante") //input nombre de solicitante
 let selector = document.getElementById("selector") // input selector de sedes
@@ -9,63 +10,65 @@ let checkbox = document.getElementById("checkbox") // input tipo checkbox "termi
 let botonEnviar= document.getElementById("botonEnviar") // input de boton de enviar formulario de solicitud 
 let idU = document.getElementById("idU")
 
-botonEnviar.addEventListener("click", function () {
-           
-    
-    if (fechaSalida.value === "") {
-            console.log("fecha salida VACIO") // mensaje en caso que NO se ingrese fecha
+const bVolver = document.getElementById("bVolver")
+
+botonEnviar.addEventListener("click", function () { // evento del boton de registro 
+   
+    // no se permiten campos vacios o inputs sin llenar
+    if (fechaSalida.value === '' || fechaRegreso.value === '' || codigoCompu.value.trim() === "") {
+        Swal.fire("Datos Incompletos"); // sweet alert "datos incorrectos"
+
         }else{
-            console.log("fecha salida LLENO");
-        }  console.log(fechaSalida.value); // muestra la fecha que se ingresa
-
-    if (fechaRegreso.value === "") {
-            console.log("fecha regreso VACIO") // mensaje en caso que NO se ingrese fecha
-        }else{
-            console.log("fecha regreso LLENO");
-        } console.log(fechaRegreso.value); // muestra la fecha que se ingresa
-
-    if (codigoCompu.value.trim() === "") {
-            console.log("codigo VACIO")
-            console.log("Error este numero de cedula no es valido");
-        } else{
-            console.log("campo LLENO");
-            
-        }
-
+            console.log("lleno"); // indica en la consola datos llenos (todos registrados)
+        
+        console.log(fechaSalida.value); // muestra en consola la fecha que se ingresa
+        console.log(fechaRegreso.value); // muestra en la consola la fecha que se ingresa
        
       // verifica si el checkbox esta checkeado o no (true or false)        
          if (checkbox.checked === false) { // valida si el checkbox esta marcado = falso / false
-            console.log("no puede entrar al sistema"); // no puede entrar al sistema
+            Swal.fire("Debes aceptar los terminos y condiciones"); // sweet alert "debes "
+
+
             botonEnviar.disabled = false // desabilita el boton "NO se puede enviar el formualrio"
     
         }else{
     
         if (checkbox.checked === true) { // valida si el checkbox esta marcado = verdadero / true
             console.log("puede entrar al sistema"); // puede entrar al sistema
+
+
+            Swal.fire({ // sweet alert "registro exitoso"
+                position: "center",
+                icon: "success",
+                title: "Formulario enviado",
+                showConfirmButton: false,
+                timer: 1500
+              }); // cierre del sweet alert
+
             botonEnviar.disabled = true // habilita el boton "se pueden enviar el formulario"
 
+            // hace un post request para enviar datos al servidor local - escribir en el server
             postPermisos(nombreSolicitante.value, selector.value, fechaSalida.value, fechaRegreso.value, codigoCompu.value)
-                // hace un post request para enviar datos al servidor local - escribir en el server
            
             } // cierre if 
         } // cierre else 
-       
-       
-
-
+    } // cierre del else
 }) // cierre del evento del boton de enviar formulario
 
 
-cargarId()
+    cargarId() // llamado a la function
+    async function cargarId() { 
+        
+    // se usa para precargar los datos en el formulario 
+    const usuarioLogin = JSON.parse( localStorage.getItem("datoUsuario")||[])
 
-async function cargarId() {
-    
-// se usa para precargar los datos en el formulario 
-const usuarioLogin = JSON.parse( localStorage.getItem("datoUsuario")||[])
+    console.log(usuarioLogin); // muestra datos en consola (datos que vienen de localStorage)
 
-    console.log(usuarioLogin);
+    nombreSolicitante.value = usuarioLogin.nombre // se precargan los datos automaticamente
+    idU.value = usuarioLogin.id  // se precargan los datos automaticamente
+} // cierre de la funcion asincrona
 
-    nombreSolicitante.value=usuarioLogin.nombre
-    idU.value=usuarioLogin.id  
-}
-
+        // boton para regresar a main
+                bVolver.addEventListener ("click", function () { // evento del boton
+                        window.location.href = "../main.html";   
+        }) // cierre del boton

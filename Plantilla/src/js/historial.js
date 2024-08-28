@@ -1,36 +1,37 @@
-import {obtenerHistorial} from "../services/getHistorial"
-import {deleteHistorial} from "../services/deleteHistorial"
+
+import {obtenerHistorial} from "../services/getHistorial" // obtiene los permisos / solicitudes del server
+import {deleteHistorial} from "../services/deleteHistorial" // elimina los permisos del historial
 
 let divAgregar = document.getElementById("divAgregar") // div vacio en HTML para agregar contenido 
 
 obtenerInfoHistorial() // llamado a la function
 async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
     let historial = await obtenerHistorial() // obtiene los datos que trae la funcion
-            console.log("Datos del historial obtenidos:", historial); // muestra los datos que llegaron al server del historial 
 
-    for (let index = 0; index < historial.length; index++) { // para que recorra los datos que estan en el server
-        
-        // se usa para agarrar los ids y poder eliminarlos 
-        let obtenerId = historial[index].id
-        console.log(obtenerId);
+            console.log("Datos del historial obtenidos:", historial); // muestra en consola los datos que llegaron al server del historial 
 
-        // 
-    const botonBuscador = document.getElementById("botonBuscador")
-    const select = document.getElementById("select")
-    const divAceptadas = document.getElementById("divAceptadas")
-    const divRechazadas = document.getElementById("divRechazadas")
+    for (let index = 0; index < historial.length; index++) { // recorre los datos que estan en el server
 
-    botonBuscador.addEventListener("click", function () {
+        let obtenerId = historial[index].id // accede a los ids (los obtiene y guarda en una variable)
+            console.log(obtenerId); // muestra en consola los id que estan en permisos / solcitudes pendientes
+   
+        const botonBuscador = document.getElementById("botonBuscador") // boton para buscar
+        const select = document.getElementById("select") // select para poder seleccionar y filtrar
+        const divAceptadas = document.getElementById("divAceptadas") // div para solicitudes aceptadas
+        const divRechazadas = document.getElementById("divRechazadas") // div para solicitudes rechazadas
+
+    botonBuscador.addEventListener("click", function () { // evento del boton de registro
           
-     if (select.value === "Aceptadas") {
+     if (select.value === "Aceptadas") { // valida si se selecciona solicitudes aceptadas
 
-        divAgregar.style.display = "none"
-        divRechazadas.style.display = "none"
-        divAceptadas.style.display = "inline"
+        divAgregar.style.display = "none" // no se mostrara el div con todas las solicitudes
+        divRechazadas.style.display = "none" // no se mostrara el div con solicitudes rechazadas
+        divAceptadas.style.display = "inline" // se mostraran el div con solicitudes aceptadas
 
         // se aplica el filter para filtrar la lista que tenga las aceptadas
         let solicitudesAceptadas = historial.filter(estado => estado.estado === "Aceptado")
-        console.log(solicitudesAceptadas);
+            console.log(solicitudesAceptadas); // muestra un mensaje en consola
+
 
         // se crean etiquetas - create element 
         let divHijo1  = document.createElement("div")
@@ -41,9 +42,9 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
         let codigo1 = document.createElement("p")
         let estado1 = document.createElement("p")
 
-        
 
-        // ESTILOS
+        //se crean clases para dar estilo en css
+
         divHijo1.className = "divHijo1"
         
         // se crean variables para que contengan la informacion "especifica" que obtiene el filtro
@@ -74,15 +75,18 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
         divAceptadas.appendChild(divHijo1)
 
      }else{
-        if (select.value === "Rechazadas") {
 
-            divAgregar.style.display = "none"
-            divAceptadas.style.display = "none"
-            divRechazadas.style.display = "inline"
+        if (select.value === "Rechazadas") { // valida si se selecciona solicitudes rechazadas
+
+            divAgregar.style.display = "none" // no se mostrara el div con todas las solicitudes
+            divAceptadas.style.display = "none" // no se mostrara el div con las solicitudes aceptadas
+            divRechazadas.style.display = "inline" // se mostraran el div con solicitudes rechazadas
 
             // se aplica el filter para filtrar la lista que tenga las rechazadas
             let solicitudesRechazadas = historial.filter(estado => estado.estado === "Rechazada")
-            console.log(solicitudesRechazadas);
+                console.log(solicitudesRechazadas);
+
+
 
             // se crean etiquetas - create element 
             let divHijo2 = document.createElement("div")
@@ -94,9 +98,8 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
             let estado2 = document.createElement("p")
            
 
-          
+            //se crean clases para dar estilo en css
 
-            // ESTILOS
             divHijo2.className = "divHijo2"
 
             // se crean variables para que contengan la informacion "especifica" que obtiene el filtro
@@ -132,10 +135,9 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
      if (select.value === "Todas") {
             divAgregar.style.display = "inline"
             divAceptadas.style.display = "none"
-            divRechazadas.style.display = "none"
 
-             
-        
+            divRechazadas.style.display = "none"  
+ 
      } // cierre del if 
 }) // cierre del boton de buscar
 
@@ -149,8 +151,10 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
         let textoEstado = document.createElement("p")
         let borrarIndividual = document.createElement("button")
 
-         // ESTILOS
+
+        //se crean clases para dar estilo en css
         divHijo.className = "divHijo"
+
 
 
         // se crean variables para que contengan la informacion "especifica" que trae / obtiene el get
@@ -178,12 +182,18 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
         divHijo.appendChild(textoCodigoCompu)
         divHijo.appendChild(textoEstado)
         divHijo.appendChild(borrarIndividual)
-        divAgregar.appendChild(divHijo)
-        
 
-        borrarIndividual.addEventListener("click", function () {
-            divAgregar.removeChild(divHijo)
-            Swal.fire("Solicitud Elimminada");
+
+        // se inserta en el div de HTML el div creado en JS que ya tiene la informacion 
+        divAgregar.appendChild(divHijo)
+
+        // boton de borrar del historial
+        borrarIndividual.addEventListener("click", function () { // evento del boton
+            divAgregar.removeChild(divHijo) // se eliminan el dato que se muestra en pantalla
+            Swal.fire("Solicitud Eliminada"); // sweet alert "solicitud eliminada"
+
+            // borra definitivamente la solicitud pendiente del server
+
 
             deleteHistorial(obtenerId)
 
@@ -192,3 +202,9 @@ async function obtenerInfoHistorial() { // se crea funcion para quitar promesa
 } //cierre de la async function 
 
 
+let botonVolver = document.getElementById("botonVolver")
+
+     // boton para regresar a main
+     botonVolver.addEventListener("click", function () { // evento del boton
+        window.location.href = "../main.html"; 
+}) // cierre del boton

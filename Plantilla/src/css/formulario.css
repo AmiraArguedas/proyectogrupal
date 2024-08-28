@@ -1,6 +1,7 @@
 body{
 
-    background-color: rgb(157, 231, 207);
+   background-color: rgb(13, 110, 253);
+
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
    
   }
@@ -19,4 +20,36 @@ body{
   background-color: #004b93;
   color: white;
 
+}
+
+
+.bVolver{
+  border-radius: 4px;
+  background-color: #004b93;
+  color: white;
+
+}
+
+
+@media (min-width : 200px) and (max-width:900px){
+
+  body{
+    background-color: rgb(13, 110, 253);
+     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    
+   }
+   .formulario{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    width: 330px;
+    margin: auto;
+    text-align: center;
+
+  }
+  .bVolver{
+    border-radius: 4px;
+    background-color: #004b93;
+    color: white;
+  
+  }
 }

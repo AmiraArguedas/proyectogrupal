@@ -1,6 +1,9 @@
 .condiciones{
-   margin: auto;
-    background-color: rgb(250, 222, 65);
+
+    border-radius: 10px;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+
     padding: 1px 9%;
     padding-bottom: 40px;
     width: 680px;
@@ -8,6 +11,9 @@
 }
 
 body{
+
+    background-color: rgb(13, 110, 253);
+
     margin: 0;
     align-content: center;
 }
@@ -20,7 +26,45 @@ h3{
 }
 
 
+.volver{
+    border-radius: 4px;
+    background-color: #ffe602 ;
+    color: rgb(7, 7, 7);
+}
 
+
+@media  (min-width: 300px) and (max-width: 900px) { 
+
+    .condiciones{
+        border-radius: 10px;
+        margin: auto;
+         background-color: rgb(255, 255, 255);
+         padding: 1px 9%;
+         padding-bottom: 40px;
+         width: 140px;
+         box-shadow: 0 2px 10px black;
+     }
+     
+     body{
+         background-color: rgb(13, 110, 253);
+         margin: 0;
+         align-content: center;
+     }
+     p{
+         font-family: 'Lucida Sans';
+     }
+     
+     h3{
+         font-family: 'Lucida Sans';
+     }
+     
+     .volver{
+         border-radius: 4px;
+         background-color: #ffe602 ;
+         color: rgb(7, 7, 7);
+     }
+
+}
 
 
 
